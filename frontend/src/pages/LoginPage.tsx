@@ -7,18 +7,47 @@ export const LoginPage = () => {
   const [isLoginView, setIsLoginView] = useState(true);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <img src={veloLogo} alt="Logo" className="mb-8 w-32" />
-      
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-        {isLoginView ? <LoginForm /> : <RegisterForm />}
+    <div className="min-h-screen w-full flex bg-slate-50 relative overflow-hidden selection:bg-[#0022FF]/20">
+      {/* Dekoracyjne elementy tła podobne do brandu Velo */}
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-gradient-to-tr from-[#0022FF]/10 to-transparent rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/10 to-[#0022FF]/5 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
 
-        <button 
-          onClick={() => setIsLoginView(!isLoginView)}
-          className="mt-6 text-sm text-blue-600 hover:underline w-full text-center"
-        >
-          {isLoginView ? 'Nie masz konta? Zarejestruj się' : 'Masz już konto? Zaloguj się'}
-        </button>
+      <div className="flex flex-col flex-1 justify-center items-center p-4 sm:p-6 z-10 w-full relative">
+        <div className="w-full max-w-md mx-auto relative perspective-1000">
+
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-white/50 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/40">
+              <img src={veloLogo} alt="Velo Logo" className="h-10 object-contain drop-shadow-sm" />
+            </div>
+          </div>
+
+          {/* Form Container */}
+          <div className="bg-white/80 backdrop-blur-md p-8 sm:p-10 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white">
+
+            <div className="transition-all duration-500 ease-in-out">
+              {isLoginView ? <LoginForm /> : <RegisterForm />}
+            </div>
+
+            {/* Przełącznik logowania/rejestracji */}
+            <div className="mt-8 pt-6 border-t border-gray-100">
+              <p className="text-center text-gray-500 text-sm">
+                {isLoginView ? 'Nie masz jeszcze konta?' : 'Masz już konto?'}
+                <button
+                  onClick={() => setIsLoginView(!isLoginView)}
+                  className="ml-2 font-semibold text-[#0022FF] hover:text-blue-800 transition-colors bg-transparent border-none p-0 cursor-pointer focus:outline-none xl:hover:underline"
+                >
+                  {isLoginView ? 'Zarejestruj się' : 'Zaloguj się'}
+                </button>
+              </p>
+            </div>
+
+          </div>
+
+          <div className="mt-8 text-center text-xs text-gray-400">
+            <p>&copy; {new Date().getFullYear()} Velo. Wszelkie prawa zastrzeżone.</p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { loginUser } from '../api/login';
 import { setCredentials } from '../slices/authSlice';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
@@ -13,12 +14,12 @@ export const useLogin = () => {
     onSuccess: (user) => {
       // 1. Zapisujemy usera w globalnym stanie Redux
       dispatch(setCredentials(user));
-
+      toast.success('Zalogowano pomyślnie!');
       // 3. Przekierowujemy na dashboard
       navigate('/dashboard');
     },
     onError: (error) => {
-      alert(error.message);
+      toast.error(error.message || 'Wystąpił błąd połączenia');
     }
   });
 };

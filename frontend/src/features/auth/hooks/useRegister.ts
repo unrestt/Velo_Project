@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../api/register';
 import { setCredentials } from '../slices/authSlice';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export const useRegister = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,7 @@ export const useRegister = () => {
       navigate('/dashboard');
     },
     onError: (error) => {
-      // Obsługa błędów (np. użytkownik już istnieje)
-      alert(error+ 'Błąd podczas rejestracji');
+      toast.error(error.message || 'Błąd podczas rejestracji');
     }
   });
 };

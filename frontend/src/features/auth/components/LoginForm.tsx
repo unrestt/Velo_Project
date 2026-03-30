@@ -13,28 +13,56 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-4 border rounded shadow">
-      <input 
-        type="text" 
-        placeholder="Username" 
-        value={username} 
-        onChange={(e) => setUsername(e.target.value)} 
-        className="p-2 border rounded"
-      />
-      <input 
-        type="password" 
-        placeholder="Password" 
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
-        className="p-2 border rounded"
-      />
-      <button 
-        type="submit" 
-        disabled={isPending}
-        className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-      >
-        {isPending ? 'Logowanie...' : 'Zaloguj się'}
-      </button>
+    <form onSubmit={handleSubmit} className="flex flex-col w-full">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Witaj w velo</h2>
+        <p className="text-sm text-gray-500 mt-2">Zaloguj się, aby uzyskać dostęp do swojego konta.</p>
+      </div>
+
+      <div className="space-y-5">
+        <div>
+          <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1.5">Nazwa użytkownika</label>
+          <input 
+            id="username"
+            type="text" 
+            placeholder="Wprowadź nazwę użytkownika" 
+            value={username} 
+            onChange={(e) => setUsername(e.target.value)} 
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400"
+            required
+          />
+        </div>
+
+        <div>
+           <div className="flex justify-between items-center mb-1.5">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Hasło</label>
+          </div>
+          <input 
+            id="password"
+            type="password" 
+            placeholder="Wprowadź hasło" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400"
+            required
+          />
+        </div>
+
+        <button 
+
+          type="submit" 
+          disabled={isPending}
+          className="w-full bg-[#0022FF] cursor-pointer hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/30 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center mt-6"
+        >
+          {isPending ? (
+             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          ) : null}
+          {isPending ? 'Logowanie...' : 'Zaloguj się'}
+        </button>
+      </div>
     </form>
   );
 };
