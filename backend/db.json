@@ -5,26 +5,38 @@
       "username": "user1",
       "password": "abc",
       "email": "...",
-      "avatar": "https://i.pravatar.cc/150?img=1"
+      "avatar": "https://www.gravatar.com/avatar/?d=mp&f=y"
     },
     {
       "id": "2",
       "username": "user2",
       "password": "xyz",
       "email": "...",
-      "avatar": "https://i.pravatar.cc/150?img=1"
+      "avatar": "https://www.gravatar.com/avatar/?d=mp&f=y"
     },
     {
       "username": "user3",
       "password": "123",
       "email": "1234@gmail.com",
       "id": "QOqFV3p",
-      "avatar": "https://i.pravatar.cc/150?img=1"
+      "avatar": "https://www.gravatar.com/avatar/?d=mp&f=y"
+    },
+    {
+      "username": "chuj",
+      "password": "1",
+      "email": "chuj@sad",
+      "id": "qpO7TIu7B7g"
+    },
+    {
+      "username": "cwel",
+      "password": "123",
+      "email": "123123@g.conm",
+      "id": "DHS2WImmA7o"
     }
   ],
   "messages": [
     {
-      "id": 1,
+      "id": "1",
       "senderId": "1",
       "receiverId": "2",
       "content": "Cześć, co słychać?",
@@ -35,5 +47,6 @@
     "settings": {
       "theme": "dark"
     }
-  }
+  },
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -17,9 +17,7 @@ export const LoginPage = () => {
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <div className="bg-white/50 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-white/40">
               <img src={veloLogo} alt="Velo Logo" className="h-10 object-contain drop-shadow-sm" />
-            </div>
           </div>
 
           {/* Form Container */}
