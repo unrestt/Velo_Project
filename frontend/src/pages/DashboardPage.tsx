@@ -1,4 +1,5 @@
 import { UserProfile } from '../features/auth/components/UserProfile';
+import { UsersSidebar } from '../features/users/components/UserSidebar';
 
 export const DashboardPage = () => {
   return (
@@ -9,7 +10,8 @@ export const DashboardPage = () => {
       </header>
 
       <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-4 bg-white shadow rounded">Twoje Kontakty</div>
+        <UsersSidebar/>
+
         <div className="p-4 bg-white shadow rounded">Twoje Wiadomości</div>
         <div className="p-4 bg-white shadow rounded">Ustawienia</div>
       </main>
