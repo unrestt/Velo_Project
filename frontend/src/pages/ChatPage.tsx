@@ -33,7 +33,7 @@ export const ChatPage = () => {
   }
 
   return (
-    <div className="flex flex-col flex-1 bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden h-full">
+    <div className="flex flex-col flex-1 bg-white dark:bg-slate-900 rounded-3xl shadow-lg shadow-gray-200/50 dark:shadow-black/20 overflow-hidden h-full transition-all duration-300">
       <ChatHeader 
         username={chatPartner?.username} 
         avatar={chatPartner?.avatar} 

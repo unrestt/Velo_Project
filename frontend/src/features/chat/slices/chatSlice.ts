@@ -1,3 +1,4 @@
+// chatSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface ChatMessage {
@@ -9,57 +10,22 @@ export interface ChatMessage {
 }
 
 interface ChatState {
-  messages: Record<string, ChatMessage[]>;
-  isLoading: boolean;
-  error: string | null;
+  activePartnerId: string | null;
 }
 
 const initialState: ChatState = {
-  messages: {},
-  isLoading: false,
-  error: null,
+  activePartnerId: null,
 };
 
 export const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
-    addMessage: (state, action: PayloadAction<ChatMessage>) => {
-      const msg = action.payload;
-      const partnerId = msg.senderId === 'me' ? msg.receiverId : msg.senderId;
-
-      if (!state.messages[partnerId]) {
-        state.messages[partnerId] = [];
-      }
-      state.messages[partnerId].push(msg);
+    setActiveChat: (state, action: PayloadAction<string | null>) => {
+      state.activePartnerId = action.payload;
     },
-    // sendMessage i receiveMessage zostawiamy pomocniczo, 
-    // choć docelowo będziemy używać React Query do danych z API
-    sendMessage: (state, action: PayloadAction<{ senderId: string; receiverId: string; content: string }>) => {
-      const { senderId, receiverId, content } = action.payload;
-      const newMsg: ChatMessage = {
-        id: Date.now().toString(),
-        senderId,
-        receiverId,
-        content,
-        timestamp: new Date().toISOString(),
-      };
-      
-      const partnerId = receiverId;
-      if (!state.messages[partnerId]) {
-        state.messages[partnerId] = [];
-      }
-      state.messages[partnerId].push(newMsg);
-    },
-    receiveMessage: (state, action: PayloadAction<ChatMessage>) => {
-       const partnerId = action.payload.senderId;
-       if (!state.messages[partnerId]) {
-        state.messages[partnerId] = [];
-      }
-      state.messages[partnerId].push(action.payload);
-    }
   },
 });
 
-export const { addMessage, sendMessage, receiveMessage } = chatSlice.actions;
+export const { setActiveChat } = chatSlice.actions;
 export default chatSlice.reducer;

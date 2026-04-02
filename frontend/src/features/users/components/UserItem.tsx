@@ -11,8 +11,8 @@ export const UserItem = ({ user, isSelected }: Props) => {
     <Link
       to={`/chat/${user.id}`}
       className={`
-        flex items-center gap-3 p-3 rounded-lg cursor-pointer transition
-        ${isSelected ? 'bg-blue-600 text-white shadow-md' : 'hover:bg-gray-100 shadow-sm border border-transparent'}
+        flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-200
+        ${isSelected ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'hover:bg-gray-100 dark:hover:bg-slate-800/50 text-gray-700 dark:text-slate-300 border border-transparent'}
       `}
     >
       {/* Avatar */}

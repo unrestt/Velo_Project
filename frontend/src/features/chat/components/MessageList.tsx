@@ -32,7 +32,7 @@ export const MessageList = ({ messages, currentUserId, isLoading }: Props) => {
   }
 
   return (
-    <div className="flex-1 p-6 overflow-y-auto bg-[#fafafa] flex flex-col gap-4">
+    <div className="flex-1 p-6 overflow-y-auto bg-[#fafafa] dark:bg-slate-900/50 flex flex-col gap-4 transition-colors duration-300">
       {messages.map((msg) => (
         <MessageBubble
           key={msg.id}

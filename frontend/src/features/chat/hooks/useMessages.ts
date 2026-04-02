@@ -5,18 +5,19 @@ import type { ChatMessage } from '../slices/chatSlice';
 export const useMessages = (currentUserId: string, partnerId: string) => {
   const queryClient = useQueryClient();
 
-  const { data: allMessages, isLoading, isError } = useQuery({
-    queryKey: ['messages'],
+  // 1. Pobieranie danych - React Query to jedyne źródło prawdy
+  const { data: messages = [], isLoading, isError } = useQuery({
+    queryKey: ['messages', partnerId], // Klucz zależny od rozmówcy
     queryFn: getMessages,
-    refetchInterval: 1000, // Polling co 1 sekundę
+    select: (allMessages) =>
+      allMessages.filter(msg =>
+        (msg.senderId === currentUserId && msg.receiverId === partnerId) ||
+        (msg.senderId === partnerId && msg.receiverId === currentUserId)
+      ),
+    refetchInterval: 1000,
   });
 
-  // Filtruj wiadomośći tylko dla danej pary rozmówców
-  const messages = allMessages?.filter(msg => 
-    (msg.senderId === currentUserId && msg.receiverId === partnerId) ||
-    (msg.senderId === partnerId && msg.receiverId === currentUserId)
-  ) || [];
-
+  // 2. Mutacja z Optimistic Update
   const sendMessageMutation = useMutation({
     mutationFn: (content: string) => sendMessageApi({
       senderId: currentUserId,
@@ -24,8 +25,19 @@ export const useMessages = (currentUserId: string, partnerId: string) => {
       content,
       timestamp: new Date().toISOString()
     }),
+    // Opcjonalnie: aktualizacja cache'u przed odpowiedzią z serwera
+    onMutate: async (newContent) => {
+      await queryClient.cancelQueries({ queryKey: ['messages', partnerId] });
+      const previousMessages = queryClient.getQueryData<ChatMessage[]>(['messages', partnerId]);
+
+      // Tu można by dodać tymczasową wiadomość do cache, 
+      // ale przy pollingu 1s invalidateQueries zazwyczaj wystarcza.
+
+      return { previousMessages };
+    },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['messages'] });
+      // Unieważniamy cache, aby pobrać "prawdziwe" dane z ID z bazy
+      queryClient.invalidateQueries({ queryKey: ['messages', partnerId] });
     }
   });
 

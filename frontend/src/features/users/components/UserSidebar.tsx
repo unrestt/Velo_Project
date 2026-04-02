@@ -24,8 +24,8 @@ export const UsersSidebar = () => {
   const filteredUsers = users?.filter(u => u.id !== currentUser?.id);
 
   return (
-    <aside className="w-full h-full p-4 flex flex-col">
-      <h2 className="text-lg font-semibold mb-4 text-gray-800">Kontakty</h2>
+    <aside className="w-full h-full p-4 flex flex-col transition-colors duration-300">
+      <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-slate-200">Kontakty</h2>
 
       <div className="flex-1 overflow-y-auto pr-2">
         {filteredUsers && (
