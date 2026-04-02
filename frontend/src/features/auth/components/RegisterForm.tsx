@@ -7,6 +7,7 @@ export const RegisterForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const avatar = "https://www.gravatar.com/avatar/?d=mp&f=y";
 
   const { mutate: register, isPending } = useRegister();
 
@@ -18,7 +19,7 @@ export const RegisterForm = () => {
       return;
     }
 
-    register({ username, password, email });
+    register({ username, password, email, avatar});
   };
 
   return (
