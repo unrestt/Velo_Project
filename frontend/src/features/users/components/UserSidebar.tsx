@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useUsers } from '../hooks/useUsers';
 import { UserList } from './UserList';
-import type { User } from '../types';
+import { useAppSelector } from '../../../store/hooks';
 
 export const UsersSidebar = () => {
   const { data: users, isLoading, isError, error } = useUsers();
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const { userId } = useParams<{ userId: string }>();
+  const { user: currentUser } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
     if (isError) {
@@ -18,17 +20,21 @@ export const UsersSidebar = () => {
     return <div className="p-4">Ładowanie użytkowników...</div>;
   }
 
-  return (
-    <aside className="w-64 bg-white shadow rounded p-4">
-      <h2 className="text-lg font-semibold mb-4">Użytkownicy</h2>
+  // Odfiltruj zalogowanego użytkownika
+  const filteredUsers = users?.filter(u => u.id !== currentUser?.id);
 
-      {users && (
-        <UserList
-          users={users}
-          selectedUser={selectedUser}
-          onSelect={setSelectedUser}
-        />
-      )}
+  return (
+    <aside className="w-full h-full p-4 flex flex-col">
+      <h2 className="text-lg font-semibold mb-4 text-gray-800">Kontakty</h2>
+
+      <div className="flex-1 overflow-y-auto pr-2">
+        {filteredUsers && (
+          <UserList
+            users={filteredUsers}
+            selectedUserId={userId}
+          />
+        )}
+      </div>
     </aside>
   );
 };

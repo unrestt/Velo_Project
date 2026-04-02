@@ -29,6 +29,34 @@
       "receiverId": "2",
       "content": "Cześć, co słychać?",
       "timestamp": "2026-03-30T20:00:00Z"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "siema mordo",
+      "timestamp": "2026-04-02T18:59:23.278Z",
+      "id": "9du07H4"
+    },
+    {
+      "senderId": "2",
+      "receiverId": "1",
+      "content": "jak tam zyciee",
+      "timestamp": "2026-04-02T18:59:28.906Z",
+      "id": "4C2xy5t"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "zajebiscie jest naprawde a jak tam u ciebie",
+      "timestamp": "2026-04-02T18:59:36.931Z",
+      "id": "E2B17tD"
+    },
+    {
+      "senderId": "2",
+      "receiverId": "1",
+      "content": "kocham cie",
+      "timestamp": "2026-04-02T18:59:40.938Z",
+      "id": "O_W4d4c"
     }
   ],
   "profile": {
