@@ -43,6 +43,13 @@
       "content": "siema",
       "timestamp": "2026-04-03T19:53:56.712Z",
       "id": 2
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "😀😀😀😀😀",
+      "timestamp": "2026-04-03T20:26:00.594Z",
+      "id": 3
     }
   ],
   "profile": {
