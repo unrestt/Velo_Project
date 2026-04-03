@@ -1,6 +1,6 @@
 # 🚀 Velo Project - Modern Chat Application
 
-![Velo Logo Placeholder](frontend/src/assets/velo_logo.png)
+![Velo Logo Placeholder](readme_images/velo_logo.png)
 
 Velo to nowoczesna, w pełni responsywna aplikacja do komunikacji w czasie rzeczywistym (real-time feel), zbudowana przy użyciu najnowocześniejszych technologii ekosystemu React. Projekt skupia się na wysokiej jakości UI/UX, wydajności oraz modularnej architekturze.
 
