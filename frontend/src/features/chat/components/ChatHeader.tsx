@@ -5,23 +5,23 @@ interface Props {
 
 export const ChatHeader = ({ username, avatar }: Props) => {
   return (
-    <div className="px-6 py-4 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md shrink-0 flex items-center justify-between transition-colors duration-300">
+    <div className="px-6 py-4 bg-white/40 backdrop-blur-md shrink-0 flex items-center justify-between transition-colors duration-300">
       <div className="flex items-center gap-3">
         <div className="relative">
           {avatar && (
             <img
               src={avatar}
               alt={username}
-              className="w-11 h-11 rounded-full object-cover ring-2 ring-white dark:ring-slate-800 shadow-sm"
+              className="w-11 h-11 rounded-full object-cover ring-2 ring-white shadow-sm"
             />
           )}
-          <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full shadow-sm animate-pulse" />
+          <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full shadow-sm animate-pulse" />
         </div>
         <div className="flex flex-col">
-          <h2 className="text-lg font-bold text-gray-800 dark:text-slate-100 leading-tight tracking-tight">
+          <h2 className="text-lg font-bold text-gray-800 leading-tight tracking-tight">
             {username || 'Użytkownik'}
           </h2>
-          <span className="text-xs text-gray-400 dark:text-slate-500 font-medium tracking-wide first-letter:uppercase">Aktywny(a) teraz</span>
+          <span className="text-xs text-gray-400 font-medium tracking-wide first-letter:uppercase">Aktywny(a) teraz</span>
 </div>
       </div>
       

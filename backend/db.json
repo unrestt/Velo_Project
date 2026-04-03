@@ -127,6 +127,97 @@
       "content": "d",
       "timestamp": "2026-04-02T22:09:44.522Z",
       "id": "3k4WG5G"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "-bWH5au",
+      "content": "dsad",
+      "timestamp": "2026-04-03T11:07:59.525Z",
+      "id": "VaQoCMk"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "czs",
+      "timestamp": "2026-04-03T11:20:45.000Z",
+      "id": "b1z00im"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "ds",
+      "timestamp": "2026-04-03T11:20:46.704Z",
+      "id": "iu7PVvT"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "siemka",
+      "timestamp": "2026-04-03T11:32:52.510Z",
+      "id": "kXuoxv1"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "-bWH5au",
+      "content": "jak sie czujesz",
+      "timestamp": "2026-04-03T11:32:58.777Z",
+      "id": "WyTANbP"
+    },
+    {
+      "senderId": "2",
+      "receiverId": "1",
+      "content": "czesc mordo",
+      "timestamp": "2026-04-03T11:33:21.766Z",
+      "id": "MF4NUtp"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "test",
+      "timestamp": "2026-04-03T11:46:28.616Z",
+      "id": "_oqKIXq"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "siema co tam",
+      "timestamp": "2026-04-03T11:46:33.704Z",
+      "id": "fPENpTT"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "dis",
+      "timestamp": "2026-04-03T11:46:38.818Z",
+      "id": "hMAjGsV"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "co tam",
+      "timestamp": "2026-04-03T11:46:55.283Z",
+      "id": "p_mm1LF"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "szybkie wiadomosci co",
+      "timestamp": "2026-04-03T11:46:59.014Z",
+      "id": "CtXXFQy"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "no fajnie sie tu pisze w sumie",
+      "timestamp": "2026-04-03T11:47:03.494Z",
+      "id": "aP7yb0Z"
+    },
+    {
+      "senderId": "2",
+      "receiverId": "1",
+      "content": "mi tez sie podoba",
+      "timestamp": "2026-04-03T11:47:10.410Z",
+      "id": "D7ue4OB"
     }
   ],
   "profile": {

@@ -1,50 +1,42 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useAppSelector } from '../../../store/hooks';
 import { getMessages, sendMessageApi } from '../api/chat';
-import type { ChatMessage } from '../slices/chatSlice';
 
-export const useMessages = (currentUserId: string, partnerId: string) => {
+export const useMessages = (currentUserId: string) => {
   const queryClient = useQueryClient();
 
-  // 1. Pobieranie danych - React Query to jedyne źródło prawdy
-  const { data: messages = [], isLoading, isError } = useQuery({
-    queryKey: ['messages', partnerId], // Klucz zależny od rozmówcy
-    queryFn: getMessages,
-    select: (allMessages) =>
-      allMessages.filter(msg =>
-        (msg.senderId === currentUserId && msg.receiverId === partnerId) ||
-        (msg.senderId === partnerId && msg.receiverId === currentUserId)
-      ),
+  // Pobieramy ID z Reduxa (to jest nasze JEDYNE źródło prawdy o aktywnym czacie)
+  const activePartnerId = useAppSelector((state) => state.chat.activePartnerId);
+
+  // 1. Pobieranie danych
+  const query = useQuery({
+    queryKey: ['messages', currentUserId, activePartnerId],
+    queryFn: () => getMessages(currentUserId, activePartnerId!),
+    enabled: !!activePartnerId && !!currentUserId,
     refetchInterval: 1000,
   });
 
-  // 2. Mutacja z Optimistic Update
+  // 2. Wysyłanie wiadomości
   const sendMessageMutation = useMutation({
-    mutationFn: (content: string) => sendMessageApi({
-      senderId: currentUserId,
-      receiverId: partnerId,
-      content,
-      timestamp: new Date().toISOString()
-    }),
-    // Opcjonalnie: aktualizacja cache'u przed odpowiedzią z serwera
-    onMutate: async (newContent) => {
-      await queryClient.cancelQueries({ queryKey: ['messages', partnerId] });
-      const previousMessages = queryClient.getQueryData<ChatMessage[]>(['messages', partnerId]);
-
-      // Tu można by dodać tymczasową wiadomość do cache, 
-      // ale przy pollingu 1s invalidateQueries zazwyczaj wystarcza.
-
-      return { previousMessages };
+    mutationFn: (content: string) => {
+      if (!activePartnerId || !currentUserId) throw new Error("Brak danych sesji");
+      return sendMessageApi({
+        senderId: currentUserId,
+        receiverId: activePartnerId,
+        content,
+        timestamp: new Date().toISOString()
+      });
     },
     onSuccess: () => {
-      // Unieważniamy cache, aby pobrać "prawdziwe" dane z ID z bazy
-      queryClient.invalidateQueries({ queryKey: ['messages', partnerId] });
+      queryClient.invalidateQueries({ queryKey: ['messages', activePartnerId] });
     }
   });
 
   return {
-    messages,
-    isLoading,
-    isError,
+    messages: query.data ?? [],
+    isLoading: query.isLoading,
+    isError: query.isError,
+    activePartnerId, // Zwracamy to, żeby komponent wiedział, kogo renderować
     sendMessage: sendMessageMutation.mutate,
     isSending: sendMessageMutation.isPending
   };

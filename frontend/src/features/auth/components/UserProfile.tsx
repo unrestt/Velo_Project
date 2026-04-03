@@ -14,31 +14,31 @@ export const UserProfile = () => {
   const initials = user?.username?.charAt(0).toUpperCase() || '?';
 
   return (
-    <div className="flex items-center gap-3 pl-2 pr-1 py-1 bg-white/60 dark:bg-slate-800/60 backdrop-blur-md border border-white/20 dark:border-slate-700/50 rounded-full shadow-sm hover:shadow-md transition-all duration-300 group">
+    <div className="flex items-center gap-3 pl-2 pr-1 py-1 bg-white/60 backdrop-blur-md border border-white/20 rounded-full shadow-sm hover:shadow-md transition-all duration-300 group">
       <div className="flex items-center gap-2">
         {user?.avatar ? (
           <img
             src={user.avatar}
             alt={user.username}
-            className="w-8 h-8 rounded-full object-cover ring-2 ring-white dark:ring-slate-800 shadow-sm"
+            className="w-8 h-8 rounded-full object-cover ring-2 ring-white shadow-sm"
           />
         ) : (
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold ring-2 ring-white dark:ring-slate-800 shadow-sm">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow-sm">
             {initials}
           </div>
         )}
         <div className="flex flex-col pr-2">
-          <span className="text-sm font-semibold text-gray-800 dark:text-slate-200 leading-none">
+          <span className="text-sm font-semibold text-gray-800 leading-none">
             {user?.username}
           </span>
-          <span className="text-[10px] text-gray-500 dark:text-slate-500 font-medium">Online</span>
+          <span className="text-[10px] text-gray-500 font-medium">Online</span>
         </div>
       </div>
 
       <button
         onClick={handleLogout}
         title="Wyloguj się"
-        className="flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-200"
+        className="flex items-center justify-center w-8 h-8 rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all duration-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
