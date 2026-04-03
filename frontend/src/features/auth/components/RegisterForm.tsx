@@ -25,59 +25,59 @@ export const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col w-full">
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Dołącz do nas</h2>
-        <p className="text-sm text-gray-500 mt-2">Utwórz konto, by w pełni korzystać z platformy.</p>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">Dołącz do nas</h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Utwórz konto, by w pełni korzystać z platformy.</p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label htmlFor="reg-username" className="block text-sm font-medium text-gray-700 mb-1.5">Nazwa użytkownika</label>
+          <label htmlFor="reg-username" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Nazwa użytkownika</label>
           <input
             id="reg-username"
             type="text"
             placeholder="np. jan_kowalski"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800/50 focus:bg-white dark:focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="reg-email" className="block text-sm font-medium text-gray-700 mb-1.5">Adres e-mail</label>
+          <label htmlFor="reg-email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Adres e-mail</label>
           <input
             id="reg-email"
             type="email"
             placeholder="jan@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800/50 focus:bg-white dark:focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="reg-password" className="block text-sm font-medium text-gray-700 mb-1.5">Hasło</label>
+          <label htmlFor="reg-password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Hasło</label>
           <input
             id="reg-password"
             type="password"
             placeholder="Minimum 8 znaków"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800/50 focus:bg-white dark:focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="reg-confirm" className="block text-sm font-medium text-gray-700 mb-1.5">Potwierdź hasło</label>
+          <label htmlFor="reg-confirm" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Potwierdź hasło</label>
           <input
             id="reg-confirm"
             type="password"
             placeholder="Powtórz hasło"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800/50 focus:bg-white dark:focus:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-[#0022FF] focus:border-transparent transition-all duration-200 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             required
           />
         </div>

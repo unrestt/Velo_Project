@@ -29,6 +29,13 @@
       "receiverId": "2",
       "content": "Cześć, co słychać?",
       "timestamp": "2026-03-30T20:00:00Z"
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "co u ciebie slychac",
+      "timestamp": "2026-04-03T13:28:31.435Z",
+      "id": "V3y_dCW"
     }
   ],
   "profile": {

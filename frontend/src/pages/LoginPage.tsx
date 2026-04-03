@@ -1,14 +1,22 @@
 import { useState } from 'react';
 import { LoginForm } from '../features/auth/components/LoginForm';
 import { RegisterForm } from '../features/auth/components/RegisterForm';
-import veloLogo from '../assets/velo_logo.png'
+import { useAppSelector } from '../store/hooks';
+import veloLogo from '../assets/velo_logo.png';
+import lightVeloLogo from '../assets/velo_light_logo.png';
+import { ThemeToggle } from '../components/ThemeToggle';
+
 
 export const LoginPage = () => {
   const [isLoginView, setIsLoginView] = useState(true);
+  const { mode } = useAppSelector((state) => state.theme);
 
   return (
     <div className="min-h-screen w-full flex bg-slate-50 dark:bg-[#0c0c0c] text-gray-900 dark:text-gray-100 relative overflow-hidden selection:bg-[#0022FF]/20 transition-colors duration-300">
-      {/* Dekoracyjne elementy tła podobne do brandu Velo */}
+
+      <div className="absolute top-6 right-6 sm:top-8 sm:right-8 z-50 scale-105 sm:scale-120 origin-top-right">
+        <ThemeToggle />
+      </div>
       <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-gradient-to-tr from-[#0022FF]/10 to-transparent rounded-full blur-3xl opacity-60 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/10 to-[#0022FF]/5 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
 
@@ -17,7 +25,7 @@ export const LoginPage = () => {
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
-              <img src={veloLogo} alt="Velo Logo" className="h-10 object-contain drop-shadow-sm" />
+            <img src={mode == 'light' ? veloLogo : lightVeloLogo} alt="Velo Logo" className="h-10 object-contain drop-shadow-sm" />
           </div>
 
           {/* Form Container */}

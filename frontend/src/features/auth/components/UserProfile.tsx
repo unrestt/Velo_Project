@@ -38,7 +38,7 @@ export const UserProfile = () => {
       <button
         onClick={handleLogout}
         title="Wyloguj się"
-        className="flex items-center justify-center w-8 h-8 rounded-full text-gray-400 dark:text-neutral-500 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all duration-200"
+        className="flex items-center justify-center w-8 h-8 rounded-full text-gray-400 dark:text-neutral-500 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all duration-200 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
