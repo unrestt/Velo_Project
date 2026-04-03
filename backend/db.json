@@ -2,40 +2,47 @@
   "users": [
     {
       "id": "1",
-      "username": "user1",
-      "password": "abc",
+      "username": "Bartek",
+      "password": "123",
       "email": "...",
-      "avatar": "https://www.gravatar.com/avatar/?d=mp&f=y"
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=2"
     },
     {
       "id": "2",
-      "username": "user2",
-      "password": "xyz",
+      "username": "Norbert",
+      "password": "123",
       "email": "...",
-      "avatar": "https://www.gravatar.com/avatar/?d=mp&f=y"
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=1"
     },
     {
-      "username": "ja",
+      "username": "Mateusz",
       "password": "123",
-      "email": "bkutnik77@gmail.com",
-      "avatar": "https://www.gravatar.com/avatar/?d=mp&f=y",
-      "id": "-bWH5au"
+      "email": "...",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=4",
+      "id": "-bWH5cxzcau"
+    },
+    {
+      "username": "Kacper",
+      "password": "123",
+      "email": "..",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=5",
+      "id": "-bWHxczcxzs5au"
     }
   ],
   "messages": [
     {
-      "id": "1",
       "senderId": "1",
       "receiverId": "2",
-      "content": "Cześć, co słychać?",
-      "timestamp": "2026-03-30T20:00:00Z"
+      "content": "siema",
+      "timestamp": "2026-04-03T19:53:37.276Z",
+      "id": 1
     },
     {
-      "senderId": "1",
-      "receiverId": "2",
-      "content": "co u ciebie slychac",
-      "timestamp": "2026-04-03T13:28:31.435Z",
-      "id": "V3y_dCW"
+      "senderId": "2",
+      "receiverId": "1",
+      "content": "siema",
+      "timestamp": "2026-04-03T19:53:56.712Z",
+      "id": 2
     }
   ],
   "profile": {

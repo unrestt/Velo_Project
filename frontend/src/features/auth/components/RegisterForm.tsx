@@ -19,7 +19,7 @@ export const RegisterForm = () => {
       return;
     }
 
-    register({ username, password, email, avatar});
+    register({ username, password, email, avatar });
   };
 
   return (
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full bg-[#0022FF] hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/30 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center mt-6"
+          className="w-full bg-[#0022FF] hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center mt-6"
         >
           {isPending ? (
             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

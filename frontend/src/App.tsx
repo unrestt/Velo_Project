@@ -7,6 +7,7 @@ import { MainLayout } from './layouts/MainLayout';
 import { useAppSelector } from './store/hooks';
 import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
+import SettingsPage from './pages/SettingsPage';
 
 function App() {
   const { isAuthenticated } = useAppSelector((state) => state.auth);
@@ -35,6 +36,7 @@ function App() {
         <Route element={isAuthenticated ? <MainLayout /> : <Navigate to="/" />}>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/chat/:userId" element={<ChatPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Route>
 
         <Route path="*" element={<div>Strona nie istnieje</div>} />
