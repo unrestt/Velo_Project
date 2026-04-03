@@ -72,7 +72,7 @@ Aplikacja została zaprojektowana zgodnie z zasadami **Feature-Sliced Design (Li
 
 1. **Repozytorium:**
    ```bash
-   git clone [url-repozytorium]
+   git clone https://github.com/unrestt/Velo_Project.git
    cd Velo_Project
    ```
 
