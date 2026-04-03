@@ -40,14 +40,14 @@ export const ChatPage = () => {
 
   if (!activePartnerId) {
     return (
-      <div className="p-4 w-full h-full flex items-center justify-center bg-gray-50 text-gray-400 font-light border rounded-xl">
+      <div className="p-4 w-full h-full flex items-center justify-center bg-gray-50 dark:bg-[#0c0c0c] text-gray-400 font-light border border-transparent dark:border-neutral-800 rounded-xl transition-colors duration-300">
         Wybierz rozmówcę z listy.
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col flex-1 bg-white rounded-3xl shadow-lg shadow-gray-200/50 overflow-hidden h-full">
+    <div className="flex flex-col flex-1 bg-white dark:bg-neutral-900 rounded-3xl shadow-lg shadow-gray-200/50 dark:shadow-black/50 overflow-hidden h-full transition-colors duration-300 border border-transparent dark:border-neutral-800/50">
       <ChatHeader 
         username={chatPartner?.username} 
         avatar={chatPartner?.avatar} 

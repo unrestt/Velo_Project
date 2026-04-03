@@ -17,11 +17,11 @@ export const MessageInput = ({ onSendMessage, disabled }: Props) => {
   };
 
   return (
-    <div className="p-4 bg-white shrink-0 shadow-[0_-1px_10px_rgba(0,0,0,0.02)] transition-colors duration-300">
+    <div className="p-4 bg-white dark:bg-neutral-900 shrink-0 shadow-[0_-1px_10px_rgba(0,0,0,0.02)] dark:shadow-[0_-1px_10px_rgba(0,0,0,0.2)] transition-colors duration-300">
       <form onSubmit={handleSubmit} className="flex gap-3">
         <input
           type="text"
-          className="flex-1 bg-gray-50/80 rounded-full px-5 py-3.5 outline-none focus:ring-4 focus:ring-blue-500/10 focus:bg-white border-transparent focus:border-blue-100 transition-all text-sm placeholder-gray-400 font-medium disabled:opacity-50"
+          className="flex-1 bg-gray-50/80 dark:bg-neutral-800 rounded-full px-5 py-3.5 outline-none focus:ring-4 focus:ring-blue-500/10 dark:focus:ring-blue-500/20 focus:bg-white dark:focus:bg-neutral-800/90 border-transparent focus:border-blue-100 dark:focus:border-blue-900 transition-all text-sm placeholder-gray-400 dark:placeholder-neutral-500 text-gray-800 dark:text-neutral-200 font-medium disabled:opacity-50"
           placeholder={disabled ? "Wysyłanie..." : "Napisz wiadomość..."}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}

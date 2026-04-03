@@ -6,9 +6,21 @@ import { ChatPage } from './pages/ChatPage';
 import { MainLayout } from './layouts/MainLayout';
 import { useAppSelector } from './store/hooks';
 import { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
 
 function App() {
   const { isAuthenticated } = useAppSelector((state) => state.auth);
+  const { mode } = useAppSelector((state) => state.theme);
+
+  useEffect(() => {
+    if (mode === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.documentElement.style.backgroundColor = '#0c0c0c'; // ensuring body bg matches dark mode for overscroll area
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.style.backgroundColor = '#f9fafb'; // gray-50
+    }
+  }, [mode]);
 
   return (
     <>
