@@ -52,13 +52,13 @@ Aplikacja została zaprojektowana zgodnie z zasadami **Feature-Sliced Design (Li
 > Poniżej znajdują się miejsca na zrzuty ekranu prezentujące kluczowe widoki aplikacji.
 
 #### 1. Panel Logowania
-![Dashboard Image Placeholder]
+![Dashboard Image Placeholder](readme_images/login_panel.png)
 
 #### 2. Główny Interfejs Chatu (Dark Mode)
-![Chat Dark Mode Placeholder]
+![Chat Dark Mode Placeholder](readme_images/chat.png)
 
 #### 3. Ustawienia Profilu
-![Settings Placeholder]
+![Settings Placeholder](readme_images/settings.png)
 
 ---
 
