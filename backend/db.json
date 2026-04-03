@@ -50,6 +50,20 @@
       "content": "😀😀😀😀😀",
       "timestamp": "2026-04-03T20:26:00.594Z",
       "id": 3
+    },
+    {
+      "senderId": "1",
+      "receiverId": "-bWH5cxzcau",
+      "content": "cześć!",
+      "timestamp": "2026-04-03T20:46:58.258Z",
+      "id": 4
+    },
+    {
+      "senderId": "-bWH5cxzcau",
+      "receiverId": "1",
+      "content": "siemka!",
+      "timestamp": "2026-04-03T20:47:16.523Z",
+      "id": 5
     }
   ],
   "profile": {
