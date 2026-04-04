@@ -9,7 +9,6 @@ const SettingsPage = () => {
   const user = useAppSelector((state) => state.auth.user);
 
   return (
-    /* h-full i overflow-y-auto naprawią problem ze scrollem */
     <div className="overflow-y-auto h-full w-full px-4 py-8 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
 

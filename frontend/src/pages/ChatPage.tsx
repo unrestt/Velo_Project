@@ -50,6 +50,7 @@ export const ChatPage = () => {
       <ChatHeader
         username={chatPartner?.username}
         avatar={chatPartner?.avatar}
+        userId={chatPartner?.id}
       />
       <MessageList
         messages={messages}
