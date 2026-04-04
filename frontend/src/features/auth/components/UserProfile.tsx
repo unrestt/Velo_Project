@@ -16,25 +16,28 @@ export const UserProfile = () => {
 
   return (
     <div className="flex items-center gap-3 pl-2 pr-1 py-1 bg-white/60 dark:bg-neutral-900/60 backdrop-blur-md border border-white/20 dark:border-neutral-700/30 rounded-full shadow-sm hover:shadow-md transition-all duration-300 group">
-      <div className="flex items-center gap-2">
-        {user?.avatar ? (
-          <img
-            src={user.avatar}
-            alt={user.username}
-            className="w-8 h-8 rounded-full object-cover ring-2 ring-white shadow-sm"
-          />
-        ) : (
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow-sm">
-            {initials}
+      <Link to={`/profile/${user?.id}`}>
+        <div className="flex items-center gap-2">
+          {user?.avatar ? (
+            <img
+              src={user.avatar}
+              alt={user.username}
+              className="w-8 h-8 rounded-full object-cover ring-2 ring-white shadow-sm"
+            />
+          ) : (
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow-sm">
+              {initials}
+            </div>
+          )}
+          <div className="flex flex-col pr-2">
+            <span className="text-sm font-semibold text-gray-800 dark:text-neutral-200 leading-none">
+              {user?.username}
+            </span>
+            <span className="text-[10px] text-gray-500 dark:text-neutral-400 font-medium">Online</span>
           </div>
-        )}
-        <div className="flex flex-col pr-2">
-          <span className="text-sm font-semibold text-gray-800 dark:text-neutral-200 leading-none">
-            {user?.username}
-          </span>
-          <span className="text-[10px] text-gray-500 dark:text-neutral-400 font-medium">Online</span>
         </div>
-      </div>
+      </Link>
+
 
       <div className="flex items-center gap-1 border-l border-gray-200 dark:border-neutral-700 pl-2 ml-1">
         <Link

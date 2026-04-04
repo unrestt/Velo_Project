@@ -35,7 +35,7 @@ const SettingsPage = () => {
           */}
           <div className="flex flex-wrap items-start gap-8">
             <div className="flex-1 min-w-[320px]">
-              <ProfileSettingsForm initialUsername={user?.username} />
+              <ProfileSettingsForm initialUsername={user?.username} initialBio={user?.bio} />
             </div>
             <div className="flex-1 min-w-[320px]">
               <PasswordChangeForm />

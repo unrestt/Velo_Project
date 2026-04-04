@@ -5,28 +5,32 @@
       "username": "Bartek",
       "password": "123",
       "email": "...",
-      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=2"
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=2",
+      "bio": "Jestem bartek"
     },
     {
       "id": "2",
       "username": "Norbert",
       "password": "123",
       "email": "...",
-      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=1"
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=1",
+      "bio": ""
     },
     {
+      "id": "3",
       "username": "Mateusz",
       "password": "123",
       "email": "...",
       "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=4",
-      "id": "-bWH5cxzcau"
+      "bio": ""
     },
     {
+      "id": "4",
       "username": "Kacper",
       "password": "123",
       "email": "..",
       "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=5",
-      "id": "-bWHxczcxzs5au"
+      "bio": ""
     }
   ],
   "messages": [

@@ -1,7 +1,8 @@
 import { api } from '../../../global-api/axiosInstance';
 
 export interface UpdateProfileData {
-    username: string;
+    username?: string;
+    bio?: string;
 }
 
 export interface UpdatePasswordData {
