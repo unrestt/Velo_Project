@@ -6,7 +6,7 @@
       "password": "123",
       "email": "...",
       "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=2",
-      "bio": "Jestem bartek"
+      "bio": "moje bio"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "password": "123",
       "email": "...",
       "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=1",
-      "bio": ""
+      "bio": "Jestem"
     },
     {
       "id": "3",
