@@ -12,7 +12,6 @@ export const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
-    // Tę akcję wywołujesz, gdy klikasz na użytkownika na liście kontaktów
     setActiveChat: (state, action: PayloadAction<string | null>) => {
       state.activePartnerId = action.payload;
     },

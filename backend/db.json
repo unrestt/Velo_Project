@@ -68,6 +68,22 @@
       "content": "siemka!",
       "timestamp": "2026-04-03T20:47:16.523Z",
       "id": 5
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "",
+      "imageUrl": "https://res.cloudinary.com/de9m37gu5/image/upload/v1775475233/fjjtsiewodgtyds45g5k.webp",
+      "timestamp": "2026-04-06T11:33:53.343Z",
+      "id": 6
+    },
+    {
+      "senderId": "1",
+      "receiverId": "2",
+      "content": "",
+      "imageUrl": "https://res.cloudinary.com/de9m37gu5/image/upload/v1775475506/t0txnfidmh8vokmtysef.webp",
+      "timestamp": "2026-04-06T11:38:27.741Z",
+      "id": 7
     }
   ],
   "profile": {

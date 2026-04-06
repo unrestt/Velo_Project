@@ -37,6 +37,7 @@ export const MessageList = ({ messages, currentUserId, isLoading }: Props) => {
         <MessageBubble
           key={msg.id}
           content={msg.content}
+          imageUrl={msg.imageUrl}
           timestamp={msg.timestamp}
           isMe={msg.senderId === currentUserId}
         />

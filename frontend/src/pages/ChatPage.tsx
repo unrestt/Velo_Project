@@ -31,9 +31,9 @@ export const ChatPage = () => {
 
   const chatPartner = users?.find(u => u.id.toString() === activePartnerId);
 
-  const handleSend = (content: string) => {
+  const handleSend = (content: string, imageUrl?: string) => {
     if (activePartnerId) {
-      sendMessage(content);
+      sendMessage({ content, imageUrl });
     }
   };
 

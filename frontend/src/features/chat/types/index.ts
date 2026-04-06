@@ -3,5 +3,6 @@ export interface ChatMessage {
   senderId: string;
   receiverId: string;
   content: string;
+  imageUrl?: string;
   timestamp: string;
 }

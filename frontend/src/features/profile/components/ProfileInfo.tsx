@@ -40,7 +40,7 @@ export const ProfileInfo = ({ user }: Props) => {
                         <span className="text-xs text-gray-400 dark:text-neutral-500 font-medium">Status</span>
                         <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5">
                             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                            Weryfikowany
+                            Zweryfikowany
                         </span>
                     </div>
                 </div>
